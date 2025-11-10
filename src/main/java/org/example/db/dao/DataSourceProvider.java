@@ -20,6 +20,7 @@ public class DataSourceProvider {
         hikariConfig.setConnectionTimeout(30000);
         hikariConfig.setPoolName("H2");
         hikariConfig.setAutoCommit(true);
+        hikariConfig.setKeepaliveTime(50000);
 
         log.info("H2 настроена");
         return new HikariDataSource(hikariConfig);
